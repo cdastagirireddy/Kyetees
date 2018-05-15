@@ -8,4 +8,6 @@
     <string name="create_a_new_account">Create a New Account</string>
     <string name="login_to_your_account">Login to your Account</string>
     <string name="your_email">Your Email</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
