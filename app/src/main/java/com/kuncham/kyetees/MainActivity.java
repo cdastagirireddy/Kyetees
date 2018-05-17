@@ -2,16 +2,22 @@ package com.kuncham.kyetees;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity{
+
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -22,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private HomeFragment mHomeFragment;
     private MensFragment mMensFragment;
     private WomensFragment mWomensFragment;
+
+    private static int cart_count=0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,11 +85,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.cart_menu,menu);
+        return true;
+    }
+
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (mToggle.onOptionsItemSelected(item)){
             return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -91,4 +109,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.main_frame,fragment);
         fragmentTransaction.commit();
     }
+
+
+
 }
