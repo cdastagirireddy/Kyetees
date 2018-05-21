@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 public class MensFragment extends Fragment {
 
 
+
+
     public MensFragment() {
         // Required empty public constructor
     }
