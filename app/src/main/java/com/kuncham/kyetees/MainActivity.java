@@ -1,5 +1,6 @@
 package com.kuncham.kyetees;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -7,7 +8,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private HomeFragment mHomeFragment;
     private MensFragment mMensFragment;
     private WomensFragment mWomensFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
     }
 
     @Override
