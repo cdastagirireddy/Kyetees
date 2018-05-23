@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private HomeFragment mHomeFragment;
     private MensFragment mMensFragment;
     private WomensFragment mWomensFragment;
+
+    private static int cart_count=0;
 
 
     @Override
@@ -84,6 +87,17 @@ public class MainActivity extends AppCompatActivity {
     };
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.cart_menu,menu);
+
+        MenuItem menuItem = menu.findItem(R.id.add_cart);
+        menuItem.setIcon(Converter.convertLayoutToImage(MainActivity.this,cart_count,R.drawable.ic_shopping_cart_white_24dp));
+
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (mToggle.onOptionsItemSelected(item)){
@@ -92,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 }
